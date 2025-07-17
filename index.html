@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="BXl4DeV0RZs91qlWittKGu6kSEvE-zUgRXfJK3vCYCY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2e4c82" id="meta-theme-color">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Abhinav Jaiswal | Software Engineer Portfolio</title>
@@ -39,6 +40,7 @@
     <!-- Styles -->
     <link href="./bundles/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="./bundles/css/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -89,9 +91,19 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1 class="dancing-script-splash">Abhinav Jaiswal</h1>
+            <p>Welcome to my portfolio</p>
+        </div>
+    </div>
+
     <header>
         <div class="header-left dancing-script-head">
-            <a href="https://av9abhinav.netlify.app/" style="text-decoration:none; color:inherit;"><h1>Abhinav Jaiswal</h1></a>
+            <a href="#" id="header-home-link" style="text-decoration:none; color:inherit;">
+                <h1>Abhinav Jaiswal</h1>
+            </a>
         </div>
         <nav>
             <div class="hamburger-menu" onclick="toggleMenu()">
@@ -100,6 +112,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+<!--                <li><a href="#timeline">Timeline</a></li>-->
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -112,18 +125,17 @@
         <!-- Home Page -->
         <section id="home" class="page active">
             <div class="home-intro">
-                <h2>Welcome to My Portfolio</h2>
-
+                <h2><span id="typed-text"></span></h2>
                 <!-- Full text for desktop -->
                 <div class="home-summary desktop-only">
-                    <p>Hello! I'm <a href="https://iabhinav.me" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: inherit;">Abhinav Jaiswal</a>, a Software Engineer based in Bangalore, India, with a strong passion for programming, web development, and cutting-edge technologies. I specialize in building scalable, high-performance systems and enjoy solving complex technical challenges.</p>
+                    <p>Hello! I'm <a href="https://iabhinav.me?utm_source=av9abhinav_netlify&utm_medium=home&utm_campaign=home_name_link" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: inherit;">Abhinav Jaiswal</a>, a Software Engineer based in Bangalore, India, with a strong passion for programming, web development, and cutting-edge technologies. I specialize in building scalable, high-performance systems and enjoy solving complex technical challenges.</p>
                     <p>With a postgraduate degree from the National Institute of Technology, Tiruchirappalli, I’ve been working at Amazon as a Software Development Engineer (SDE) since 2018. I’m constantly learning and evolving to stay aligned with the latest trends in software engineering and system design.</p>
-                    <p>If you’d like a closer look at what I’ve been working on and where I’m headed next, you’ll find it all at <a href="https://iabhinav.me" class="highlight-link" target="_blank" rel="noopener noreferrer">https://iabhinav.me</a> — my digital home base.</p>
+                    <p>If you’d like a closer look at what I’ve been working on and where I’m headed next, you’ll find it all at <a href="https://iabhinav.me?utm_source=av9abhinav_netlify&utm_medium=home&utm_campaign=home_url_link" class="highlight-link" target="_blank" rel="noopener noreferrer">https://iabhinav.me</a> — my digital home base.</p>
                 </div>
                 <!-- Short text for mobile -->
                 <div class="home-summary mobile-only">
-                    <p>Hi, I’m <a href="https://iabhinav.me" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: inherit;">Abhinav Jaiswal</a>, a Software Engineer at Amazon based in Bangalore. I specialize in scalable systems, system design, and full-stack development.</p>
-                    <p>Postgraduate from NIT Trichy, passionate about solving real-world tech challenges and constantly learning. More at <a href="https://iabhinav.me" class="highlight-link" target="_blank" rel="noopener noreferrer">iabhinav.me</a>.</p>
+                    <p>Hi, I’m <a href="https://iabhinav.me?utm_source=av9abhinav_netlify&utm_medium=home&utm_campaign=home_name_link" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: inherit;">Abhinav Jaiswal</a>, a Software Engineer at Amazon based in Bangalore. I specialize in scalable systems, system design, and full-stack development.</p>
+                    <p>Postgraduate from NIT Trichy, passionate about solving real-world tech challenges and constantly learning. More at <a href="https://iabhinav.me?utm_source=av9abhinav_netlify&utm_medium=home&utm_campaign=home_url_link" class="highlight-link" target="_blank" rel="noopener noreferrer">iabhinav.me</a>.</p>
                 </div>
 
             </div>
@@ -150,12 +162,104 @@
                     </ul>
                     <br>
                     <p>For a deeper look at my journey, personal projects, and articles, feel free to visit my primary website
-                        <a href="https://iabhinav.me" class="highlight-link" target="_blank" rel="noopener noreferrer">https://iabhinav.me</a>. It serves as a central hub for all my technical work and insights.
+                        <a href="https://iabhinav.me?utm_source=av9abhinav_netlify&utm_medium=about&utm_campaign=about_link" class="highlight-link" target="_blank" rel="noopener noreferrer">https://iabhinav.me</a>. It serves as a central hub for all my technical work and insights.
                     </p>
 
                 </div>
             </div>
         </section>
+
+<!--        &lt;!&ndash; Timeline Page &ndash;&gt;-->
+<!--        <section id="timeline" class="page">-->
+<!--            <h2>My Journey</h2>-->
+<!--            <div class="accordion-timeline">-->
+
+<!--                &lt;!&ndash; Item 1 &ndash;&gt;-->
+<!--                <div class="accordion-card" data-aos="fade-up">-->
+<!--                    <div class="accordion-header" onclick="toggleAccordion(this)">-->
+<!--                        <div class="timeline-icon">💼</div>-->
+<!--                        <div>-->
+<!--                            <h3>SDE II @ Amazon</h3>-->
+<!--                            <p class="duration">Oct 2022 — Present</p>-->
+<!--                        </div>-->
+<!--                        <span class="arrow">▾</span>-->
+<!--                    </div>-->
+<!--                    <div class="accordion-body">-->
+<!--                        <ul>-->
+<!--                            <li>Led classification system with 2,000+ TPS.</li>-->
+<!--                            <li>Ensured compliance, mentored juniors.</li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Item 2 &ndash;&gt;-->
+<!--                <div class="accordion-card" data-aos="fade-up" data-aos-delay="100">-->
+<!--                    <div class="accordion-header" onclick="toggleAccordion(this)">-->
+<!--                        <div class="timeline-icon">💼</div>-->
+<!--                        <div>-->
+<!--                            <h3>SDE I @ Amazon</h3>-->
+<!--                            <p class="duration">Jul 2018 — Sep 2022</p>-->
+<!--                        </div>-->
+<!--                        <span class="arrow">▾</span>-->
+<!--                    </div>-->
+<!--                    <div class="accordion-body">-->
+<!--                        <ul>-->
+<!--                            <li>Optimized service/fleet data, reduced costs.</li>-->
+<!--                            <li>Built prereg + caching + metrics dashboard.</li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Item 3 &ndash;&gt;-->
+<!--                <div class="accordion-card" data-aos="fade-up" data-aos-delay="200">-->
+<!--                    <div class="accordion-header" onclick="toggleAccordion(this)">-->
+<!--                        <div class="timeline-icon">🛠️</div>-->
+<!--                        <div>-->
+<!--                            <h3>Intern @ Amazon</h3>-->
+<!--                            <p class="duration">Jan 2018 — Jun 2018</p>-->
+<!--                        </div>-->
+<!--                        <span class="arrow">▾</span>-->
+<!--                    </div>-->
+<!--                    <div class="accordion-body">-->
+<!--                        <ul>-->
+<!--                            <li>Built analytics dashboard (Java Spring MVC).</li>-->
+<!--                            <li>Automated anomaly-based task routing.</li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Education 1 &ndash;&gt;-->
+<!--                <div class="accordion-card" data-aos="fade-up" data-aos-delay="300">-->
+<!--                    <div class="accordion-header" onclick="toggleAccordion(this)">-->
+<!--                        <div class="timeline-icon">🎓</div>-->
+<!--                        <div>-->
+<!--                            <h3>MCA @ NIT Trichy</h3>-->
+<!--                            <p class="duration">Jul 2015 — Jun 2018</p>-->
+<!--                        </div>-->
+<!--                        <span class="arrow">▾</span>-->
+<!--                    </div>-->
+<!--                    <div class="accordion-body">-->
+<!--                        <p>Specialized in system design & distributed systems.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Education 2 &ndash;&gt;-->
+<!--                <div class="accordion-card" data-aos="fade-up" data-aos-delay="400">-->
+<!--                    <div class="accordion-header" onclick="toggleAccordion(this)">-->
+<!--                        <div class="timeline-icon">🎓</div>-->
+<!--                        <div>-->
+<!--                            <h3>B.Sc. (IT) @ YSM Ranchi</h3>-->
+<!--                            <p class="duration">Aug 2011 — Jun 2014</p>-->
+<!--                        </div>-->
+<!--                        <span class="arrow">▾</span>-->
+<!--                    </div>-->
+<!--                    <div class="accordion-body">-->
+<!--                        <p>Solid base in programming, databases & web technologies.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </section>-->
 
         <!-- Skills Page -->
         <section id="skills" class="page">
@@ -242,10 +346,21 @@
     <!-- Footer -->
     <footer>
         <div class="custom-footer">
-            <a href="https://iabhinav.me" target="_blank" class="combo-glow-link">
+            <a id="footer-link" href="https://iabhinav.me" target="_blank" class="combo-glow-link">
                 <i class="fa fa-globe"></i> Explore iAbhinav.me
             </a>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<!--    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>-->
+<!--    <script>-->
+<!--        AOS.init({-->
+<!--          once: true,-->
+<!--          duration: 1000,-->
+<!--          offset: 120,-->
+<!--        });-->
+<!--    </script>-->
+
 </body>
 </html>

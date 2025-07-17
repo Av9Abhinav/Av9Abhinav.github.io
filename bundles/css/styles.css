@@ -38,7 +38,13 @@ header {
 }
 
 .home-intro, .about-content, .skills-grid, .projects-grid, .contact-container {
-    margin-top: 40spx; /* Ensure there is enough space between sections */
+    margin-top: 40px; /* Ensure there is enough space between sections */
+}
+
+#typed-text {
+    color: #ff8c00;
+    font-weight: 700;
+    font-size: 28px;
 }
 
 .header-left h1 {
@@ -215,6 +221,225 @@ main {
     font-size: 16px;
     line-height: 1.6;
 }
+
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #2e4c82, #0a2268);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+  color: #fff;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2s;
+  pointer-events: none;
+}
+
+#splash-screen .splash-content {
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+.dancing-script-splash {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  font-style: normal;
+}
+
+.splash-content p{
+    font-size: 1rem;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+
+
+/*
+#timeline {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.timeline-cards {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 5px solid #ff8c00;
+  padding: 20px 25px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.timeline-icon {
+  font-size: 30px;
+  background: #ff8c00;
+  color: #000;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px #ff8c00aa;
+  flex-shrink: 0;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  color: #ff8c00;
+  margin: 0;
+}
+
+.timeline-content .duration {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.timeline-content ul {
+  padding-left: 18px;
+  margin-top: 0;
+  color: #eee;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.timeline-content p {
+  color: #eee;
+  font-size: 15px;
+  margin-top: 0;
+}
+
+.accordion-timeline {
+  max-width: 900px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accordion-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 5px solid #ff8c00;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 20px;
+  gap: 20px;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: rgba(255, 140, 0, 0.1);
+}
+
+.accordion-header h3 {
+  font-size: 20px;
+  color: #ff8c00;
+  margin: 0;
+}
+
+.accordion-header .duration {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.accordion-body {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.accordion-body.open {
+  padding: 15px 20px;
+  max-height: 500px;
+}
+
+.accordion-body ul,
+.accordion-body p {
+  color: #eee;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.accordion-body ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.timeline-icon {
+  font-size: 30px;
+  background: #ff8c00;
+  color: #000;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px #ff8c00aa;
+  flex-shrink: 0;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #ccc;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.open .arrow {
+  transform: rotate(180deg);
+}
+*/
 
 .skills-grid {
     display: grid;
@@ -644,4 +869,25 @@ footer {
         .about-photo {
             border-radius: 50px 50px 25px 25px ;
         }
+
+        /*
+        .timeline-card {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .timeline-icon {
+            margin-bottom: 10px;
+          }
+
+          @media (max-width: 768px) {
+            .accordion-header {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+
+            .arrow {
+              align-self: flex-end;
+            }
+            */
 }
