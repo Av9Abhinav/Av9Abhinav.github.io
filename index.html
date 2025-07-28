@@ -5,11 +5,13 @@
     <meta name="google-site-verification" content="BXl4DeV0RZs91qlWittKGu6kSEvE-zUgRXfJK3vCYCY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2e4c82" id="meta-theme-color">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Abhinav Jaiswal | Software Engineer Portfolio</title>
     <meta name="title" content="Abhinav Jaiswal | Software Engineer Portfolio" />
-    <meta name="description" content="Portfolio of Abhinav Jaiswal, Software Engineer at Amazon in Bangalore, India. Skilled in system design, software development, and cloud computing." />
+    <meta name="description" content="Portfolio of Abhinav Jaiswal, Software Engineer at Amazon in Bangalore, India. Skilled in system design and software development" />
     <meta name="author" content="Abhinav Jaiswal" />
     <meta name="keywords" content="Abhinav Jaiswal, Software Engineer, Amazon, Portfolio, Bangalore, System Design, AWS, NIT Trichy" />
     <meta name="robots" content="index, follow" />
@@ -20,6 +22,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://av9abhinav.pages.dev/" />
+    <meta property="og:site_name" content="Abhinav Jaiswal Portfolio" />
     <meta property="og:title" content="Abhinav Jaiswal | Software Engineer Portfolio" />
     <meta property="og:description" content="Explore the experience, projects, and skills of Abhinav Jaiswal, Software Engineer at Amazon." />
     <meta property="og:image" content="https://av9abhinav.pages.dev/bundles/images/jabhinav11_pic.jpg" />
@@ -32,10 +35,62 @@
     <meta name="apple-mobile-web-app-title" content="Av9Abhinav" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Fonts -->
+    <!-- Preconnect for font performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
+
+    <!-- Preload Dancing Script -->
+    <link rel="preload" href="/bundles/fonts/dancing-script-v28-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Inline @font-face for Dancing Script (weight 700) -->
+    <style>
+        @font-face {
+          font-family: 'Dancing Script';
+          font-style: normal;
+          font-weight: 700;
+          src: url('/bundles/fonts/dancing-script-v28-latin-700.woff2') format('woff2');
+          font-display: swap;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, #2e4c82, #0a2268);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            color: #fff;
+            animation: fadeOut 1s ease forwards;
+            animation-delay: 2s;
+            pointer-events: none;
+          }
+          #splash-screen .splash-content {
+            text-align: center;
+            animation: fadeIn 3s ease;
+          }
+          .dancing-script-splash {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-style: normal;
+          }
+          .splash-content p {
+            font-size: 1rem;
+          }
+          @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to   { opacity: 1; transform: scale(1.2); }
+          }
+    </style>
+
+    <!-- Load Poppins and Roboto only -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
     <link href="./bundles/css/font-awesome.css" rel="stylesheet" />
@@ -134,7 +189,7 @@
                 </div>
                 <!-- Short text for mobile -->
                 <div class="home-summary mobile-only">
-                    <p>Hi, I’m <a href="https://iabhinav.me?utm_source=av9abhinav&utm_medium=home&utm_campaign=home_name_link" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: inherit;">Abhinav Jaiswal</a>, a Software Engineer at Amazon based in Bangalore. I specialize in scalable systems, system design, and full-stack development.</p>
+                    <p>Hi, I’m <a href="https://iabhinav.me?utm_source=av9abhinav&utm_medium=home&utm_campaign=home_name_link" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: inherit;">Abhinav Jaiswal</a>, a Software Engineer at Amazon based in Bangalore.</p>
                     <p>Postgraduate from NIT Trichy, passionate about solving real-world tech challenges and constantly learning. More at <a href="https://iabhinav.me?utm_source=av9abhinav&utm_medium=home&utm_campaign=home_url_link" class="highlight-link" target="_blank" rel="noopener noreferrer">iabhinav.me</a>.</p>
                 </div>
 

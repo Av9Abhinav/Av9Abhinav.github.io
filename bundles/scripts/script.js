@@ -87,6 +87,8 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         setThemeColor("#00001e");
     }, 2000);
+
+    showPage(hash || 'home');
 });
 
 //function toggleAccordion(clickedHeader) {
