@@ -1,0 +1,21 @@
+{
+  "name": "Av9Abhinav.pages.dev",
+  "short_name": "Av9Abhinav",
+  "icons": [
+    {
+      "src": "/bundles/images/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/bundles/images/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#0a2268",
+  "background_color": "#0a2268",
+  "display": "standalone"
+}
