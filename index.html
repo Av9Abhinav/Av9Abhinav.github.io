@@ -67,6 +67,12 @@
             animation-delay: 2s;
             pointer-events: none;
           }
+          .splash-heading {
+             font-size: 3rem;
+             font-weight: bold;
+             display: block;
+             text-shadow: 0 0 10px rgba(255,255,255,0.5);
+          }
           #splash-screen .splash-content {
             text-align: center;
             animation: fadeIn 3s ease;
@@ -84,7 +90,7 @@
             to { opacity: 0; visibility: hidden; }
           }
           @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
+            from { opacity: 0; transform: scale(0.7); }
             to   { opacity: 1; transform: scale(1.2); }
           }
     </style>
@@ -149,7 +155,7 @@
     <!-- Splash Screen -->
     <div id="splash-screen">
         <div class="splash-content">
-            <h1 class="dancing-script-splash">Abhinav Jaiswal</h1>
+            <span class="dancing-script-splash splash-heading">Abhinav Jaiswal</span>
             <p>Welcome to my portfolio</p>
         </div>
     </div>
