@@ -1,0 +1,28 @@
+name: Notify IndexNow on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create IndexNow key file
+        run: echo "${{ secrets.INDEXNOW_KEY }}" > ${{ secrets.INDEXNOW_KEY }}.txt
+
+      - name: Notify IndexNow API
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+          -H "Content-Type: application/json" \
+          -d "{
+            \"host\": \"av9abhinav.pages.dev\",
+            \"key\": \"${{ secrets.INDEXNOW_KEY }}\",
+            \"urlList\": [
+              \"https://av9abhinav.pages.dev/\"
+            ]
+          }"
