@@ -69,22 +69,22 @@ window.addEventListener('DOMContentLoaded', () => {
         window.location.hash = '#home';
     }
 
-    // Typing effect for homepage
-    new Typed("#typed-text", {
-        strings: [
-            "Welcome to My Portfolio",
-            "Tech Enthusiast from Bangalore",
-            "NIT Trichy Postgraduate"
-        ],
-        typeSpeed: 60,
-        backSpeed: 30,
-        backDelay: 3000,
-        loop: true,
-        showCursor: true,
-        cursorChar: " |"
-    });
 
     setTimeout(() => {
+        // Typing effect for homepage
+        new Typed("#typed-text", {
+            strings: [
+                "Welcome to My Portfolio",
+                "Tech Enthusiast from Bangalore",
+                "NIT Trichy Postgraduate"
+            ],
+            typeSpeed: 60,
+            backSpeed: 30,
+            backDelay: 3000,
+            loop: true,
+            showCursor: true,
+            cursorChar: " |"
+        });
         setThemeColor("#00001e");
     }, 2000);
 
