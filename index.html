@@ -42,58 +42,7 @@
     <!-- Preload Dancing Script -->
     <link rel="preload" href="/bundles/fonts/dancing-script-v28-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- Inline @font-face for Dancing Script (weight 700) -->
-    <style>
-        @font-face {
-          font-family: 'Dancing Script';
-          font-style: normal;
-          font-weight: 700;
-          src: url('/bundles/fonts/dancing-script-v28-latin-700.woff2') format('woff2');
-          font-display: swap;
-        }
-
-        #splash-screen {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(180deg, #2e4c82, #0a2268);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            flex-direction: column;
-            color: #fff;
-            animation: fadeOut 1s ease forwards;
-            animation-delay: 2s;
-            pointer-events: none;
-          }
-          .splash-heading {
-             font-size: 3rem;
-             font-weight: bold;
-             display: block;
-             text-shadow: 0 0 10px rgba(255,255,255,0.5);
-          }
-          #splash-screen .splash-content {
-            text-align: center;
-            animation: fadeIn 3s ease;
-          }
-          .dancing-script-splash {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-style: normal;
-          }
-          .splash-content p {
-            font-size: 1rem;
-          }
-          @keyframes fadeOut {
-            to { opacity: 0; visibility: hidden; }
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.7); }
-            to   { opacity: 1; transform: scale(1.2); }
-          }
-    </style>
+    <link rel="stylesheet" href="/bundles/css/splash.css" />
 
     <!-- Load Poppins and Roboto only -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
@@ -429,6 +378,11 @@
 <!--          offset: 120,-->
 <!--        });-->
 <!--    </script>-->
+
+    <div id="konami-splash" class="konami-splash-screen" style="display: none;">
+        <canvas id="konami-confetti"></canvas>
+    </div>
+    <audio id="konami-audio" src="/bundles/audio/zehra.mp3" preload="auto" loop></audio>
 
 </body>
 </html>

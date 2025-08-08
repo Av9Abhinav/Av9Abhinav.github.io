@@ -736,6 +736,76 @@ footer {
     }
 }
 
+.konami-splash-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(180deg, #2e4c82, #0a2268);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+  color: #fff;
+}
+
+.konami-splash-screen {
+  text-align: center;
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.6);
+  padding: 30px 40px;
+  box-shadow: 0 0 30px #ff8c00aa;
+  animation: glitch 1s infinite;
+  font-family: 'Courier New', monospace;
+}
+
+#konami-confetti {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Reuse glitch animation */
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #ff00c8; }
+  25% { text-shadow: -2px 2px #00fff9; }
+  50% { text-shadow: 2px -2px #ff00c8; }
+  75% { text-shadow: -2px -2px #00fff9; }
+  100% { text-shadow: 2px 2px #ff00c8; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ff8c00;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  z-index: 9999;
+  animation: fadeInOut 5s ease forwards;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  10%, 90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {

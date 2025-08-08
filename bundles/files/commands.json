@@ -1,0 +1,10 @@
+{
+  "help": "Available commands:\n  - about\n  - skills\n  - projects\n  - github\n  - linkedin\n  - clear\n  - exit",
+  "about": "Abhinav Jaiswal - Software Engineer at Amazon\n  Based in Bangalore, Postgrad from NIT Trichy\n  More at: https://iabhinav.me",
+  "skills": "Skills:\n  - Java, C++, C\n  - Web Dev (HTML, CSS, JS)\n  - System Design, AWS",
+  "projects": "1. Adaventure 2017 — Code Judge Web App\n  2. Version'16 — Android App",
+  "github": "https://github.com/JAbhinav11",
+  "linkedin": "https://linkedin.com/in/JAbhinav11",
+  "exit": "/",
+  "clear": "CLEAR_SCREEN"
+}

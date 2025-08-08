@@ -88,8 +88,152 @@ window.addEventListener('DOMContentLoaded', () => {
         setThemeColor("#00001e");
     }, 2000);
 
+    removeSplash();
     showPage(hash || 'home');
 });
+
+function removeSplash() {
+    setTimeout(() => {
+        const splash = document.getElementById("splash-screen");
+        if (splash) splash.remove();
+    }, 3000);
+}
+
+// Secret Sequences
+let terminalBuffer = '';
+let abhinavBuffer = '';
+
+const terminalSecret = 'terminal';
+const abhinavSecret = 'abhinav';
+
+document.addEventListener("keydown", (e) => {
+  const key = e.key.toLowerCase();
+
+  // Only track letters
+  if (/^[a-z]$/.test(key)) {
+    terminalBuffer += key;
+    abhinavBuffer += key;
+
+    // Trim to max lengths
+    if (terminalBuffer.length > terminalSecret.length) {
+      terminalBuffer = terminalBuffer.slice(-terminalSecret.length);
+    }
+    if (abhinavBuffer.length > abhinavSecret.length) {
+      abhinavBuffer = abhinavBuffer.slice(-abhinavSecret.length);
+    }
+
+    // Check matches
+    if (terminalBuffer === terminalSecret) {
+      window.location.href = 'https://terminal.iabhinav.me';
+    }
+
+    if (abhinavBuffer === abhinavSecret) {
+      activateKonamiEasterEgg();
+      abhinavBuffer = '';
+    }
+
+  } else {
+    // Reset buffers on invalid keys
+    terminalBuffer = '';
+    abhinavBuffer = '';
+  }
+
+  // Escape key handling
+  if (e.key === "Escape") {
+    stopKonamiMusic();
+  }
+});
+
+function activateKonamiEasterEgg() {
+  const splash = document.getElementById("konami-splash");
+  const audio = document.getElementById("konami-audio");
+
+  if (splash) splash.style.display = "flex";
+  startConfetti();
+
+  if (audio) {
+    try {
+      audio.currentTime = 0;
+      audio.play().catch(err => console.warn("Autoplay failed:", err));
+    } catch (e) {
+      console.error("Audio play error:", e);
+    }
+  }
+
+  showToast("Press ESC to stop music");
+
+  // Optional: auto-hide splash after 15s (music continues)
+  setTimeout(() => {
+    if (splash) splash.style.display = "none";
+    stopConfetti();
+  }, 15000);
+}
+
+function stopKonamiMusic() {
+  const audio = document.getElementById("konami-audio");
+  const splash = document.getElementById("konami-splash");
+
+  if (audio && !audio.paused) {
+    audio.pause();
+    audio.currentTime = 0;
+    showToast("🎵 Music stopped");
+  }
+
+  if (splash && splash.style.display !== "none") {
+    splash.style.display = "none";
+    stopConfetti();
+  }
+}
+
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
+// Confetti logic
+let konamiConfettiCanvas;
+let konamiCtx;
+let konamiParticles = [];
+let konamiAnimFrame;
+
+function startConfetti() {
+  konamiConfettiCanvas = document.getElementById("konami-confetti");
+  konamiConfettiCanvas.width = window.innerWidth;
+  konamiConfettiCanvas.height = window.innerHeight;
+  konamiCtx = konamiConfettiCanvas.getContext("2d");
+
+  konamiParticles = Array.from({ length: 120 }, () => ({
+    x: Math.random() * konamiConfettiCanvas.width,
+    y: Math.random() * -konamiConfettiCanvas.height,
+    speed: Math.random() * 3 + 2,
+    radius: Math.random() * 6 + 2,
+    color: `hsl(${Math.random() * 360}, 100%, 50%)`
+  }));
+
+  animateConfetti();
+}
+
+function animateConfetti() {
+  konamiCtx.clearRect(0, 0, konamiConfettiCanvas.width, konamiConfettiCanvas.height);
+  for (const p of konamiParticles) {
+    konamiCtx.beginPath();
+    konamiCtx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+    konamiCtx.fillStyle = p.color;
+    konamiCtx.fill();
+    p.y += p.speed;
+    if (p.y > konamiConfettiCanvas.height) p.y = -10;
+  }
+  konamiAnimFrame = requestAnimationFrame(animateConfetti);
+}
+
+function stopConfetti() {
+  cancelAnimationFrame(konamiAnimFrame);
+}
+
+
 
 //function toggleAccordion(clickedHeader) {
 //  const allCards = document.querySelectorAll('.accordion-card');
