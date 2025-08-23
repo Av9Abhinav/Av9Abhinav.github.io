@@ -702,19 +702,12 @@ footer {
     overflow: hidden;
 }
 
-.glass-card img {
-    width: 100%;
-    border-radius: 15px;
-    transition: transform 0.5s ease, filter 0.4s ease;
-    filter: brightness(0.9);
-}
-
 .glass-card:hover {
     transform: scale(1.03);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
 
-.glass-card:hover img {
+.glass-card:hover .custom-image {
     transform: scale(1.05);
     filter: brightness(1);
 }
@@ -727,6 +720,18 @@ footer {
 
 .mobile-only {
     display: none;
+}
+
+.custom-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-image: url('https://iabhinav.me/abhinav/Abhinav.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 3px #000000aa;
+    transition: transform 0.5s ease, filter 0.4s ease;
+    filter: brightness(0.9);
 }
 
 @media (max-width: 848px) {
@@ -875,7 +880,7 @@ footer {
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* base shadow */
     }
 
-    .glass-card:hover img {
+    .glass-card:hover .custom-image {
         transform: none;
         filter: brightness(0.9);
     }
